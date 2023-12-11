@@ -30,9 +30,12 @@ def homeui():
         st.session_state['scenario'] = "The war in Kosovo"
 
     # If it is, update it
-    st.session_state['scenario'] = st.text_area("Scenario", value=st.session_state.get('scenario', ''), placeholder="Enter your scenario here and continue by clicking on ...")
-
-    st.success("Understood! The Scenario has been updated")
+    scenario_input = st.text_area("Scenario", value=st.session_state.get('scenario', ''), placeholder="Enter your scenario here and continue by clicking on ...")
+    
+    if st.button('Submit'):
+        if scenario_input:
+            st.session_state['scenario'] = scenario_input
+            st.success("Understood! The Scenario has been updated")
 
 def main():
     homeui()
