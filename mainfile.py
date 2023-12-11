@@ -1,5 +1,4 @@
 import os
-import numpty
 import openai
 import streamlit as st
 
