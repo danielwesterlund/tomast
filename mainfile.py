@@ -1,4 +1,5 @@
 import os
+import numpty
 import openai
 import streamlit as st
 
@@ -7,7 +8,7 @@ import streamlit as st
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 openai.api_key = os.environ['OPENAI_API_KEY']
-st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
+st.set_page_config(page_title="Tomast", page_icon="", layout='wide')
 
 
 # ------- General UI -------
