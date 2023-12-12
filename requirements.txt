@@ -1,6 +1,6 @@
-streamlit
-openai
+streamlitstreamlit>=1.28
 os
+openai>=1.2
 numpy
 pandas
 openpyxl
