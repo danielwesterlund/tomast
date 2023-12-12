@@ -1,7 +1,6 @@
-import streamlit as st
 import os
 import openai
-
+import streamlit as st
 
 
 # ------- Constants and Configuration --------
