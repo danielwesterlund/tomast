@@ -1,41 +1,44 @@
+import streamlit as st
 import os
 import openai
-import streamlit as st
+
 
 
 # ------- Constants and Configuration --------
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 openai.api_key = os.environ['OPENAI_API_KEY']
-st.set_page_config(page_title="NexaChat", page_icon="🧙‍♂️", layout='wide')
+
+st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
 
 # ------- General UI -------
 
-def home_ui():
-    st.title('Conduct a synthetic Interview 🧙‍♂️')
+def homeui():
+    st.title("This is Tomast")
+
     st.markdown("""
-    Welcome to NexaChat! This application allows you to create a tailored AI-generated persona and conduct a manual or automatic interview with it. \n
-    Gain first insights and prepare for a real interview. Let's get started!
+    Welcome to Tomast! This is TOMAST, an AI-powered operating system to facilitate the creation of scripts and materials for military exercises and training. 
+    Let's get started!
     """)
     st.markdown("")
-    st.subheader('How to conduct your synthetic interview')
-    "1. Enter an interview topic."
-    "2. Generate your persona."
-    "3. Start the conversation."
-    "Use the sidebar to navigate."
-    st.markdown("")
-    st.subheader('Enter your interview topic 👇')
-    if 'project_problem' not in st.session_state:
-        st.session_state['project_problem'] = "How to conduct synthetic interviews"
-    st.session_state['project_problem'] = st.text_area("Interview Topic", value=st.session_state.get('project_problem', ''), placeholder="Enter your interview topic here and continue by clicking on '1️⃣ Generate Persona' in the sidebar.")
-    if st.session_state['project_problem'] != "How to conduct synthetic interviews":
-        st.success("Interview topic saved! Continue through the sidebar.")
+    st.subheader('Please define the Scenario 👇')
 
-# ------- Main App -------
+    # Check if 'Scenario' already exists in session_state
+    # If not, then initialize it
+    if 'scenario' not in st.session_state:
+        st.session_state['scenario'] = "The war in Kosovo"
+
+    # If it is, update it
+    scenario_input = st.text_area("Scenario", value=st.session_state.get('scenario', ''), placeholder="Enter your scenario here and continue by clicking on ...")
+    
+    if st.button('Submit'):
+        if scenario_input:
+            st.session_state['scenario'] = scenario_input
+            st.success("Understood! The Scenario has been updated")
 
 def main():
-    home_ui()
+    homeui()
 
 if __name__ == "__main__":
     main()
