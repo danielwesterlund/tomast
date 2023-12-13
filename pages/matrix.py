@@ -1,10 +1,11 @@
 import os
-import py2neo
-import streamlit_neo4j
+#import openai
+#import py2neo
+#import streamlit_neo4j
 import streamlit as st
 
-from py2neo import Graph
-from streamlit_neo4j import neo4j_component
+#from py2neo import Graph
+#from streamlit_neo4j import neo4j_component
 
 # ------- General UI -------
 
