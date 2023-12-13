@@ -35,7 +35,7 @@ def homeui():
         <thead style="background-color: lightgray; font-weight: bold;">
             <tr>
                 <th>Name</th>
-                <th>Value</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
