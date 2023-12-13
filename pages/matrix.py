@@ -1,10 +1,12 @@
 import os
+import py2neo
+import streamlit_neo4j
 import streamlit as st
-
-# ------- General UI -------
 
 from py2neo import Graph
 from streamlit_neo4j import neo4j_component
+
+# ------- General UI -------
 
 def homeui():
     st.title("This is The Relationship Matrix")
@@ -28,6 +30,7 @@ def homeui():
         # Show the query as CYPHER and update the graph
         st.write('Your CYPHER query: ', prompt)
         neo4j_component(graph.run(prompt).data())
+
 
         # Confirm changes and update the graph on the Neo4j server
         if st.button('Confirm'):
