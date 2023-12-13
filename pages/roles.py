@@ -15,21 +15,38 @@ def homeui():
     people = ["Person 1", "Person 2", "Person 3"]  # Replace with actual names
     selected_person = st.sidebar.selectbox("Select a person", people)
     
-    # Display details for selected person in a table
-    if selected_person:
-        st.subheader(f"Details for {selected_person}")
-        details = {
-            "Name": "",  # Replace with actual data
-            "Age": "",  # Replace with actual data
-            "Date of Birth": "",  # Replace with actual data
-            "Educational History": "",  # Replace with actual data
-            "Biography": "",  # Replace with actual data
-            "Character Traits": "",  # Replace with actual data
-            "Ethnicity": "",  # Replace with actual data
-            "Personality": "",  # Replace with actual data
-            "Motivations": "",  # Replace with actual data
-        }
-        st.table(details)
+  if selected_person:
+    st.subheader(f"Details for {selected_person}")
+    details = {
+        "Name": "",  # Replace with actual data
+        "Age": "",  # Replace with actual data
+        "Date of Birth": "",  # Replace with actual data
+        "Educational History": "",  # Replace with actual data
+        "Biography": "",  # Replace with actual data
+        "Character Traits": "",  # Replace with actual data
+        "Ethnicity": "",  # Replace with actual data
+        "Personality": "",  # Replace with actual data
+        "Motivations": "",  # Replace with actual data
+    }
+
+    # Create a HTML table with custom CSS
+    table_html = """
+    <table style="width:100%">
+        <thead style="background-color: lightgray; font-weight: bold;">
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+    """
+    for key, value in details.items():
+        table_html += f"<tr><td>{key}</td><td>{value}</td></tr>"
+    table_html += "</tbody></table>"
+
+    st.markdown(table_html, unsafe_allow_html=True)
+
+    
 def main():
     homeui()
 
