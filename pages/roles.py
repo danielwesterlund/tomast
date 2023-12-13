@@ -15,11 +15,11 @@ def homeui():
     people = ["Person 1", "Person 2", "Person 3"]  # Replace with actual names
     selected_person = st.sidebar.selectbox("Select a person", people)
     
-  if selected_person:
-    st.subheader(f"Details for {selected_person}")
-    details = {
-        "Name": "",  # Replace with actual data
-        "Age": "",  # Replace with actual data
+    if selected_person:
+        st.subheader(f"Details for {selected_person}")
+        details = {
+            "Name": "",  # Replace with actual data
+            "Age": "",  # Replace with actual data
         "Date of Birth": "",  # Replace with actual data
         "Educational History": "",  # Replace with actual data
         "Biography": "",  # Replace with actual data
