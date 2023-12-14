@@ -1,12 +1,12 @@
 import os
-#import openai
+import openai
 import streamlit as st
 
 
 # ------- Constants and Configuration --------
 
-#os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
-#openai.api_key = os.environ['OPENAI_API_KEY']
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
