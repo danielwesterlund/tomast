@@ -21,7 +21,7 @@ def call_openai_api(prompt, max_tokens=1000, temperature=0.4):
     language = st.session_state['language']
     system = f"""You always generate in {language}."""
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": system},
