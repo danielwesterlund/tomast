@@ -84,7 +84,7 @@ def homeui():
         st.session_state['scenario'] = ""
 
 
-    st.write(st.session_state['scenario'])
+   
 
     # If it is, update it
     scenario_input = st.text_area("Scenario", placeholder="Enter your scenario here...")
@@ -98,8 +98,8 @@ def homeui():
             st.markdown("**Scenario Summary**")
             st.write(summary)
     
-   
-
+   # Current Scenario
+    st.write(st.session_state['scenario'])
     
 
 
