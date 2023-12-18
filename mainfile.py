@@ -50,11 +50,9 @@ You will analyse this Scenario in detail:  {st.session_state['scenario']}
 
 and will extract:
 key people, 
-alliances, 
-important events, 
-conflicting parties, 
-potential betrayals 
-and potentials for peace.
+organisations, 
+important incidents, 
+important places,
 
 You will then summarise the scenario in 2-3 paragraphs.
     """
