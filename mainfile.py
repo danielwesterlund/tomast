@@ -86,8 +86,8 @@ def homeui():
         if scenario_input:
             st.session_state['scenario'] = scenario_input
             st.success("Understood! The Scenario has been updated")
-            scenario_summary = scenario_summary()
-            st.write(scenario_summary)
+            summary = scenario_summary()
+            st.write(summary)
     
 
 
