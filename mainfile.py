@@ -46,15 +46,16 @@ def call_openai_api(prompt, max_tokens=5000, temperature=0.4):
 def scenario_summary():
     prompt = f"""The first input you always need is the Scenario which serves as the fundamental context in which the scenario takes place. This could either be a functional scenario which will include places, organisations and history. It will usually have a military context and include conflict and potential for conflict.
 
-You will analyse this Scenario in detail:  {st.session_state['scenario']}
+    You will analyse this Scenario in detail:  {st.session_state['scenario']}
 
-and will extract:
-key people, 
-organisations, 
-important incidents, 
-important places,
+    You will then summarise the scenario in 2-3 paragraphs.
 
-You will then summarise the scenario in 2-3 paragraphs.
+You will then extract:
+all key people, 
+all organisations mentioned, 
+all significant incidents, 
+all important places,
+
     """
     scenario_summary = call_openai_api(prompt, max_tokens=1000)
     st.session_state['scenario'] = scenario_summary
