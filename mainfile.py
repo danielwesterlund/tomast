@@ -3,6 +3,7 @@ import openai
 import os
 import json
 import requests
+import time
 
 from openai import OpenAI
 
@@ -11,7 +12,7 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
-st.session_state['model'] = "gpt-3.5-turbo-1106" 
+st.session_state['model'] = "gpt-3.5-turbo" 
 #st.session_state['model'] = "gpt-4"
 st.session_state['language'] = "German"
 
@@ -101,7 +102,13 @@ def homeui():
             st.success("Understood! The Scenario is being updated")
             summary = scenario_summary()
 
-            data = summary.json()  # Convert the response to JSON
+            data = {
+                "scenario": {
+                "summary": summary,
+                "orginal": scenario_input,
+                "timestamp": time.time()
+                }
+}
 
             # Store the JSON data in a file
             with open("db.json", "w") as write_file:
