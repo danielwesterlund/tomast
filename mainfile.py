@@ -115,6 +115,7 @@ def homeui():
                 json.dump(data, write_file)
 
             print("Data stored successfully!")
+            print(data)
             
             st.markdown("**Scenario Summary**")
             st.write(summary)
