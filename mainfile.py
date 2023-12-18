@@ -17,7 +17,8 @@ st.session_state['language'] = "German"
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 # Create an instance of the OpenAI API client
-client = openai.OpenAI(os.environ['OPENAI_API_KEY'])
+client = openai.OpenAI()
+
 
 # ------- OpenAI Call -------
 
