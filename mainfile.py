@@ -9,7 +9,7 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
-st.session_state['model'] = "gpt-3.5-turbo"
+st.session_state['model'] = "gpt-3.5-turbo-1106"
 st.session_state['language'] = "German"
 
 
@@ -22,7 +22,7 @@ client = openai.OpenAI()
 
 # ------- OpenAI Call -------
 
-def call_openai_api(prompt, max_tokens=1000, temperature=0.4):
+def call_openai_api(prompt, max_tokens=5000, temperature=0.4):
     model = st.session_state['model']
     language = st.session_state['language']
     system = f"""You always generate in {language}."""
