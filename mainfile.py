@@ -13,12 +13,11 @@ st.session_state['model'] = "gpt-3.5-turbo"
 st.session_state['language'] = "German"
 
 
-# Create an instance of the OpenAI API client
-client = openai.ApiClient(
+# Set the OpenAI API key
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
-openai.api_key = os.environ['OPENAI_API_KEY']
-)
 
+# Create an instance of the OpenAI API client
+client = openai.OpenAI(os.environ['OPENAI_API_KEY'])
 
 # ------- OpenAI Call -------
 
