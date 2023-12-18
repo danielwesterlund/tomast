@@ -1,6 +1,5 @@
 import streamlit as st
 import openai
-import os
 import py2neo
 import streamlit_neo4j
 
