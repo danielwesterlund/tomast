@@ -1,5 +1,6 @@
-import os
 import streamlit as st
+import openai
+import os
 
 # ------- Constants and Configuration --------
 
@@ -14,7 +15,11 @@ def homeui():
     st.sidebar.title("People with roles")
     people = ["Person 1", "Person 2", "Person 3"]  # Replace with actual names
     selected_person = st.sidebar.selectbox("Select a person", people)
+
+    ####get openai to output JSON file or store as a veriable? and populate the vars using that
     
+
+    ####Maybe change this to a dataframe??
     if selected_person:
         st.subheader(f"Details for {selected_person}")
         details = {

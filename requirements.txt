@@ -1,6 +1,6 @@
 streamlit
-os
 openai
+os
 numpy
 pandas
 openpyxl
