@@ -26,7 +26,7 @@ client = openai.OpenAI()
 
 # ------- OpenAI Call -------
 
-def call_openai_api(prompt, max_tokens=5000, temperature=0.4):
+def call_openai_api(prompt, max_tokens=4000, temperature=0.4):
     model = st.session_state['model']
     language = st.session_state['language']
     system = f"""You always generate in {language}."""
