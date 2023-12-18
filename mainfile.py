@@ -9,7 +9,8 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
-st.session_state['model'] = "gpt-3.5-turbo-1106"
+#st.session_state['model'] = "gpt-3.5-turbo-1106" 
+st.session_state['model'] = "gpt-4"
 st.session_state['language'] = "German"
 
 
