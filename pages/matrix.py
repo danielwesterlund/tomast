@@ -1,11 +1,11 @@
 import streamlit as st
 import openai
 import py2neo
-import streamlit_neo4j
+#import streamlit_neo4j
 
 
 from py2neo import Graph
-from streamlit_neo4j import neo4j_component
+#from streamlit_neo4j import neo4j_component
 
 # ------- General UI -------
 ###Create a toggle for advanced settings to show the cypher box or not

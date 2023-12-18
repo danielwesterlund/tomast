@@ -4,4 +4,4 @@ numpy
 pandas
 openpyxl
 py2neo
-streamlit_neo4j
+#streamlit_neo4j
