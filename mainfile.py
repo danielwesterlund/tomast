@@ -36,7 +36,7 @@ def call_openai_api(prompt, max_tokens=1000, temperature=0.4):
             max_tokens=max_tokens,
             temperature=temperature
         )
-        return response['choices'][0]['message']['content'].strip()
+        return response.choices[0].message.content.strip()
     except (KeyError, Exception) as e:
         return f"An error occurred: {e}"
     
