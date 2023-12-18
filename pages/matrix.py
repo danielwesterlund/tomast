@@ -1,11 +1,11 @@
 import streamlit as st
 import openai
-import py2neo
-import streamlit_neo4j
+#import py2neo
+#import streamlit_neo4j
 
 
-from py2neo import Graph
-from streamlit_neo4j import neo4j_component
+#from py2neo import Graph
+#from streamlit_neo4j import neo4j_component
 
 # ------- Constants and Configuration --------
 
@@ -70,11 +70,11 @@ def homeui():
     #graph = Graph("bolt://localhost:7687", auth=("neo4j", "password"))
 
     # Input box for CYPHER query
-    query = st.text_input('Enter your CYPHER query here', 'MATCH (n) RETURN n')
+ #   query = st.text_input('Enter your CYPHER query here', 'MATCH (n) RETURN n')
 
     # If no query is entered, display the complete graph
-    if query == '':
-        query = 'MATCH (n) RETURN n'
+  #  if query == '':
+  #      query = 'MATCH (n) RETURN n'
 
     # Use the Streamlit Component to display the Neo4j Graph
     #neo4j_component(graph.run(query).data())
