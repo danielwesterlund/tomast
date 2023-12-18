@@ -56,8 +56,10 @@ all organisations mentioned,
 all significant incidents, 
 all important places,
 
+You will also analyse how these are connected and arranging them into a graph database where you will define the relationships between the nodes.
+
     """
-    scenario_summary = call_openai_api(prompt, max_tokens=1000)
+    scenario_summary = call_openai_api(prompt, max_tokens=5000)
     st.session_state['scenario'] = scenario_summary
     st.success("Summary generated...")
     return scenario_summary
