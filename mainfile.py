@@ -104,8 +104,8 @@ def homeui():
             data = summary.json()  # Convert the response to JSON
 
             # Store the JSON data in a file
-            with open("db.json", "w") as file:
-                json.dump(data, file)
+            with open("db.json", "w") as write_file:
+                json.dump(data, write_file)
 
             print("Data stored successfully!")
             
