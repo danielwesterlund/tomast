@@ -23,6 +23,19 @@ def homeui():
     st.markdown("")
     st.subheader('Please define the Scenario 👇')
 
+    prompt = "Please generate a blog outline on how a beginner can break into the field of data science."
+
+completion = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant with extensive experience in data science and technical writing."},
+    {"role": "user", "content": prompt}
+  ]
+)
+
+print(completion.choices[0].message)
+
+
     # Check if 'Scenario' already exists in session_state
     # If not, then initialize it
     if 'scenario' not in st.session_state:
