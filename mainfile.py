@@ -101,7 +101,7 @@ def homeui():
             st.success("Understood! The Scenario is being updated")
             summary = scenario_summary()
 
-            data = response.json()  # Convert the response to JSON
+            data = summary.json()  # Convert the response to JSON
 
             # Store the JSON data in a file
             with open("db.json", "w") as file:
