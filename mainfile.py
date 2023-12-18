@@ -8,6 +8,8 @@ import os
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 openai.api_key = os.environ['OPENAI_API_KEY']
 
+client = openai.ApiClient()
+
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
 st.session_state['model'] = "gpt-3.5-turbo"
