@@ -83,19 +83,24 @@ def homeui():
     # Check if 'Scenario' already exists in session_state
     # If not, then initialize it
     if 'scenario' not in st.session_state:
-        st.session_state['scenario'] = "The war in Kosovo"
+        st.session_state['scenario'] = ""
+
+
+    st.write(st.session_state['scenario'])
 
     # If it is, update it
-    scenario_input = st.text_area("Scenario", value=st.session_state.get('scenario', ''), placeholder="Enter your scenario here and continue by clicking on ...")
+    scenario_input = st.text_area("Scenario", placeholder="Enter your scenario here...")
     
     if st.button('Submit'):
         if scenario_input:
             st.session_state['scenario'] = scenario_input
-            st.success("Understood! The Scenario has been updated")
+            st.success("Understood! The Scenario is being updated")
             summary = scenario_summary()
+            
+            st.markdown("**Scenario Summary**")
             st.write(summary)
     
-
+   
 
     
 
