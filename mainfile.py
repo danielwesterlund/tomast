@@ -1,6 +1,8 @@
 import streamlit as st
 import openai
 import os
+import json
+import requests
 
 from openai import OpenAI
 
@@ -9,8 +11,8 @@ from openai import OpenAI
 
 st.set_page_config(page_title="Tomast", page_icon="🪖", layout='wide')
 
-#st.session_state['model'] = "gpt-3.5-turbo-1106" 
-st.session_state['model'] = "gpt-4"
+st.session_state['model'] = "gpt-3.5-turbo-1106" 
+#st.session_state['model'] = "gpt-4"
 st.session_state['language'] = "German"
 
 
@@ -98,6 +100,14 @@ def homeui():
             st.session_state['scenario'] = scenario_input
             st.success("Understood! The Scenario is being updated")
             summary = scenario_summary()
+
+            data = response.json()  # Convert the response to JSON
+
+            # Store the JSON data in a file
+            with open("db.json", "w") as file:
+                json.dump(data, file)
+
+            print("Data stored successfully!")
             
             st.markdown("**Scenario Summary**")
             st.write(summary)
